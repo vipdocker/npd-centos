@@ -5,4 +5,3 @@ kubectl delete ClusterRoleBinding/npd-binding -n kube-system
 kubectl delete serviceaccount/node-problem-detector -n kube-system
 
 kubectl delete configmap/npd-config -n kube-system
-kubectl delete configmap/npd-plugin -n kube-system

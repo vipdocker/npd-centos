@@ -48,7 +48,7 @@ spec:
         - "/bin/sh"
         - "-c"
         # Pass both config to support both journald and syslog.
-        - "/node-problem-detector --logtostderr --system-log-monitors=/config/kernel-monitor.json,/config/docker-monitor.json,/config/abrt-adaptor.json,custom-plugin-monitor.json,network-problem-monitor.json"
+        - "/node-problem-detector --logtostderr --system-log-monitors=/config/kernel-monitor.json,/config/docker-monitor.json,/config/abrt-adaptor.json"
         securityContext:
           privileged: true
         resources:
@@ -92,9 +92,6 @@ spec:
       - name: npd-config
         configMap:
           name: npd-config
-      - name: npd-plugin
-        configMap:
-          name: npd-plugin
       serviceAccountName: node-problem-detector
       tolerations:
       - operator: "Exists"
