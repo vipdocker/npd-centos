@@ -1,7 +1,7 @@
 # npd-centos
 Kubernetes node problem detector configration for centos
 
-### Guideline
+### Install Guideline
 
 1. Initialize configmap for npd config and plugin
 
@@ -44,4 +44,10 @@ echo "task docker:7 blocked for more than 300 seconds." |systemd-cat -t kernel
 ```
 
 - Check the corresponding node has the Kernel deadlock=true conditioin
- 
+
+### Uninstall NPD
+
+```
+chmod +x uninstall-npd.sh
+./uninstall-npd.sh
+``` 
